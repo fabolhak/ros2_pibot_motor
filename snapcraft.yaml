@@ -1,0 +1,30 @@
+name: ros2-pibot-motor
+version: '0.1'
+summary: ROS2 Motor module for my PiBot
+description: |
+  This package provides the hardware driver to the PiBots motor.
+
+confinement: devmode
+base: core18
+
+parts:
+  rpi-gpio:
+    plugin: python
+    python-version: "python3"
+    python-packages: ["RPi.GPIO"]
+
+  ros2-motor-driver:
+    plugin: colcon
+    source: https://github.com/fabolhak/ros2_pibot_motor.git
+    source-branch: master
+    colcon-rosdistro: dashing
+    colcon-source-space: pibot_motor
+
+apps:
+  run:
+    command: opt/ros/dashing/bin/ros2 run ros2_pibot_motor service
+
+
+architectures:
+  - build-on: amd64 
+  - build-on: arm64

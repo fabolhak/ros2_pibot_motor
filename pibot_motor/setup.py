@@ -26,7 +26,6 @@ setup(
     ],
     description='Motor driver of my little pibot.',
     license='Apache License, Version 2.0',
-    tests_require=['pytest'],
     entry_points={
         'console_scripts': [
             'service = ros2_pibot_motor.service:main'
