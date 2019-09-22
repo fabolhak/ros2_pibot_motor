@@ -36,9 +36,11 @@ def triggerMotor(request, response):
     # Wait for 1 seconds
     time.sleep(1)
 
-    # Reset the GPIO pins (turns off motors too)
-    GPIO.cleanup()
-
+    # Turn all motors off
+    GPIO.output(7, 0)
+    GPIO.output(8, 0)
+    GPIO.output(9, 0)
+    GPIO.output(10, 0)
 
     response.success = True
     response.message = "Sucess!"
@@ -69,6 +71,9 @@ def main(args=None):
     srv = g_node.create_service(Trigger, 'triggerMotor', triggerMotor)
     while rclpy.ok():
         rclpy.spin_once(g_node)
+
+    # Reset the GPIO pins (turns off motors too)
+    GPIO.cleanup()
 
     # Destroy the service attached to the node explicitly
     # (optional - otherwise it will be done automatically
