@@ -15,7 +15,7 @@ parts:
     source-branch: master
     colcon-rosdistro: dashing
     colcon-source-space: pibot_motor
-    stage-packages: [python3-rpi.gpio,ros-dashing-ros-core]
+    stage-packages: [python-rpi.gpio,python3-rpi.gpio,libatlas3-base,ros-dashing-ros-core]
 
 apps:
   run:
