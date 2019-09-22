@@ -7,6 +7,8 @@ description: |
 confinement: devmode
 base: core18
 
+plugs: [gpio-memory-control, network]
+
 parts:
 
   ros2-motor-driver:
@@ -15,7 +17,7 @@ parts:
     source-branch: master
     colcon-rosdistro: dashing
     colcon-source-space: pibot_motor
-    stage-packages: [python-rpi.gpio,python3-rpi.gpio,libatlas3-base,ros-dashing-ros-core]
+    stage-packages: [python-rpi.gpio,python3-rpi.gpio,python3-numpy,libatlas3-base,ros-dashing-ros-core]
 
 apps:
   run:
