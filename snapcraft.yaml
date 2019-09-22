@@ -8,10 +8,6 @@ confinement: devmode
 base: core18
 
 parts:
-  rpi-gpio:
-    plugin: python
-    python-version: "python3"
-    python-packages: ["RPi.GPIO"]
 
   ros2-motor-driver:
     plugin: colcon
@@ -19,12 +15,11 @@ parts:
     source-branch: master
     colcon-rosdistro: dashing
     colcon-source-space: pibot_motor
+    stage-packages: [python3-rpi.gpio]
 
 apps:
   run:
     command: opt/ros/dashing/bin/ros2 run ros2_pibot_motor service
 
-
 architectures:
-  - build-on: amd64 
   - build-on: arm64
