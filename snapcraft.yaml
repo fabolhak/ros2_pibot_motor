@@ -1,4 +1,4 @@
-name: ros2-pibot-motor
+name: ros2-pibot-motor-fabolhak
 version: '0.1'
 summary: ROS2 Motor module for my PiBot
 description: |
@@ -11,7 +11,7 @@ parts:
 
   ros2-motor-driver:
     plugin: colcon
-    source: https://github.com/fabolhak/ros2_pibot_motor.git
+    source: .
     source-branch: master
     colcon-rosdistro: dashing
     colcon-source-space: pibot_motor
