@@ -13,7 +13,7 @@ parts:
   ros2-motor-driver:
     plugin: colcon
     source: .
-    source-branch: gpio
+    source-branch: master
     colcon-rosdistro: dashing
     colcon-source-space: pibot_motor
     stage-packages: [ros-dashing-ros-core,libblas3,liblapack3]
