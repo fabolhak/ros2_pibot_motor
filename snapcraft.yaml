@@ -8,18 +8,25 @@ confinement: devmode
 base: core18
 
 parts:
+
   ros2-motor-driver:
     plugin: colcon
     source: .
-    source-branch: master
+    source-branch: gpio
     colcon-rosdistro: dashing
     colcon-source-space: pibot_motor
     stage-packages: [ros-dashing-ros-core,libblas3,liblapack3]
     override-prime: | 
       snapcraftctl prime
-      cd $SNAPCRAFT_PRIME/usr/lib/$SNAPCRAFT_ARCH_TRIPLET
       ln -s blas/libblas.so.3 libblas.so.3
+      cd $SNAPCRAFT_PRIME/usr/lib/$SNAPCRAFT_ARCH_TRIPLET
       ln -s lapack/liblapack.so.3 liblapack.so.3
+      
+  gpio-lib:
+    plugin: python
+    python-version: python3
+    python-packages: [RPi.GPIO]
+
 
 
 
@@ -29,6 +36,9 @@ apps:
     plugs:
        - network
        - network-bind
+       - gpio
+       - gpio-memory-control
+       - hardware-observe
 
 architectures:
-  - build-on: amd64
+  - build-on: arm64
