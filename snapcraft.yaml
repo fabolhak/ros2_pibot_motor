@@ -14,18 +14,15 @@ parts:
     source-branch: master
     colcon-rosdistro: dashing
     colcon-source-space: pibot_motor
-    stage-packages: [ros-dashing-ros-core] # python-rpi.gpio,python3-rpi.gpio,python3-numpy,libatlas3-base,
+    stage-packages: [ros-dashing-ros-core,python3-numpy,libblas3] # python-rpi.gpio,python3-rpi.gpio,,
 
 
 apps:
   run:
-    command: source opt/ros/dashing/setup.bash && opt/ros/dashing/bin/ros2 run ros2_pibot_motor service
+    command: opt/ros/dashing/bin/ros2 run ros2_pibot_motor service
     plugs:
        - network
        - network-bind
-   #   - gpio-memory-control
-    #  - gpio
-     # - hardware-observe
 
 architectures:
-  - build-on: arm64
+  - build-on: amd64
