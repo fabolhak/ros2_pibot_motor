@@ -32,6 +32,8 @@ apps:
        - network
        - network-bind
        - gpio-memory-control
+       - hardware-observe
+       - mount-observe
 
 architectures:
   - build-on: arm64
