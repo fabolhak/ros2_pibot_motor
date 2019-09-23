@@ -16,10 +16,7 @@ parts:
   ros2-motor-driver:
     plugin: colcon
     source: .
-    source-branch: gpio  setup:
-    plugin: python
-    python-version: python3
-    python-packages: [RPi.GPIO]
+    source-branch: gpio
     colcon-rosdistro: dashing
     colcon-source-space: pibot_motor
     stage-packages: [ros-dashing-ros-core,python3-numpy,libatlas3-base,libblas3] 
