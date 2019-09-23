@@ -7,7 +7,7 @@ license: Apache-2.0
 
 confinement: strict
 base: core18
-grade: candidate
+grade: stable
 
 parts:
   ros2-motor-driver:
