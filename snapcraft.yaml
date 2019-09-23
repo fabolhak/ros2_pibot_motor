@@ -7,10 +7,6 @@ description: |
 confinement: devmode
 base: core18
 
-plugs:
-  - gpio-memory-control
-  - network
-
 parts:
 
   ros2-motor-driver:
@@ -24,6 +20,9 @@ parts:
 apps:
   run:
     command: opt/ros/dashing/bin/ros2 run ros2_pibot_motor service
+    plugs:
+      - gpio-memory-control
+      - network
 
 architectures:
   - build-on: arm64
