@@ -31,6 +31,7 @@ apps:
     plugs:
        - network
        - network-bind
+       - network-control
        - gpio-memory-control
        - hardware-observe
        - mount-observe
