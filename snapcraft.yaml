@@ -8,10 +8,6 @@ confinement: devmode
 base: core18
 
 parts:
-  gpio:
-    plugin: python
-    python-version: python3
-    python-packages: [RPi.GPIO]
 
   ros2-motor-driver:
     plugin: colcon
@@ -20,6 +16,11 @@ parts:
     colcon-rosdistro: dashing
     colcon-source-space: pibot_motor
     stage-packages: [ros-dashing-ros-core,python3-numpy,libatlas3-base,libblas3] 
+    
+  gpio-lib:
+    plugin: python
+    python-version: python3
+    python-packages: [RPi.GPIO]
 
 
 apps:
