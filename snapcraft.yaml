@@ -21,8 +21,9 @@ apps:
   run:
     command: source opt/ros/dashing/setup.bash && opt/ros/dashing/bin/ros2 run ros2_pibot_motor service
     plugs:
+       - network
+       - network-bind
    #   - gpio-memory-control
-      - network
     #  - gpio
      # - hardware-observe
 
