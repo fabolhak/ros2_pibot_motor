@@ -11,10 +11,10 @@ parts:
   ros2-motor-driver:
     plugin: colcon
     source: .
-    source-branch: master
+    source-branch: gpio
     colcon-rosdistro: dashing
     colcon-source-space: pibot_motor
-    stage-packages: [ros-dashing-ros-core,python3-numpy,libatlas3-base,libblas3] 
+    stage-packages: [python-rpi.gpio,python3-rpi.gpio,ros-dashing-ros-core,python3-numpy,libatlas3-base,libblas3] 
 
 
 apps:
@@ -23,6 +23,9 @@ apps:
     plugs:
        - network
        - network-bind
+       - gpio
+       - gpio-memory-control
+       - hardware-observe
 
 architectures:
-  - build-on: amd64
+  - build-on: arm64
