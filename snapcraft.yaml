@@ -8,7 +8,6 @@ confinement: devmode
 base: core18
 
 parts:
-
   ros2-motor-driver:
     plugin: colcon
     source: .
@@ -19,10 +18,12 @@ parts:
 
 apps:
   run:
-    command: opt/ros/dashing/bin/ros2 run ros2_pibot_motor service
+    command: source opt/ros/dashing/setup.bash && opt/ros/dashing/bin/ros2 run ros2_pibot_motor service
     plugs:
       - gpio-memory-control
       - network
+      - gpio
+      - hardware-observe
 
 architectures:
   - build-on: arm64
