@@ -1,8 +1,8 @@
 name: ros2-pibot-motor-fabolhak
-version: '1.0'
+version: '1.1'
 summary: ROS2 Motor module for my PiBot
 description: |
-  This package provides the hardware driver to the PiBots motor.
+  This package provides the hardware driver to the PiBots motor. Please read the [Readme](https://github.com/fabolhak/ros2_pibot_motor/blob/master/README.md) for usage instructions.
 license: Apache-2.0
 
 confinement: strict
@@ -31,10 +31,8 @@ apps:
     plugs:
        - network
        - network-bind
-       - network-control
        - gpio-memory-control
        - hardware-observe
-       - mount-observe
 
 architectures:
   - build-on: arm64
