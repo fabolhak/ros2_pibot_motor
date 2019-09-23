@@ -1,11 +1,13 @@
 name: ros2-pibot-motor-fabolhak
-version: '0.1'
+version: '1.0'
 summary: ROS2 Motor module for my PiBot
 description: |
   This package provides the hardware driver to the PiBots motor.
+license: Apache-2.0
 
 confinement: strict
 base: core18
+grade: candidate
 
 parts:
   ros2-motor-driver:
