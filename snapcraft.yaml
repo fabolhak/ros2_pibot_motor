@@ -7,7 +7,9 @@ description: |
 confinement: devmode
 base: core18
 
-#plugs: [gpio-memory-control, network]
+plugs:
+  - gpio-memory-control
+  - network
 
 parts:
 
