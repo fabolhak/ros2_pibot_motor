@@ -18,8 +18,8 @@ parts:
     stage-packages: [ros-dashing-ros-core,libblas3,liblapack3]
     override-prime: | 
       snapcraftctl prime
-      ln -s blas/libblas.so.3 libblas.so.3
       cd $SNAPCRAFT_PRIME/usr/lib/$SNAPCRAFT_ARCH_TRIPLET
+      ln -s blas/libblas.so.3 libblas.so.3
       ln -s lapack/liblapack.so.3 liblapack.so.3
       
   gpio-lib:
