@@ -1,5 +1,5 @@
 name: ros2-pibot-motor-fabolhak
-version: '1.1'
+version: '1.2'
 summary: ROS2 Motor module for my PiBot
 description: |
   This package provides the hardware driver to the PiBots motor. Please read the [Readme](https://github.com/fabolhak/ros2_pibot_motor/blob/master/README.md) for usage instructions.
@@ -14,9 +14,9 @@ parts:
     plugin: colcon
     source: .
     source-branch: master
-    colcon-rosdistro: dashing
+    colcon-rosdistro: foxy
     colcon-source-space: pibot_motor
-    stage-packages: [ros-dashing-ros-core,libblas3,liblapack3]
+    stage-packages: [ros-foxy-ros-core,libblas3,liblapack3]
       
   gpio-lib:
     plugin: python
@@ -25,7 +25,7 @@ parts:
 
 apps:
   run:
-    command: opt/ros/dashing/bin/ros2 run ros2_pibot_motor service
+    command: opt/ros/foxy/bin/ros2 run ros2_pibot_motor service
     environment: 
       LD_LIBRARY_PATH: "$LD_LIBRARY_PATH:$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/blas:$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/lapack"
     plugs:
