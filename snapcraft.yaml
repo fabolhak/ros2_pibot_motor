@@ -19,7 +19,6 @@ parts:
       
   gpio-lib:
     plugin: python
-    python-version: python3
     python-packages: [RPi.GPIO]
 
 apps:
