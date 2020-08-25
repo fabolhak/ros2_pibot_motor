@@ -15,6 +15,7 @@ parts:
     source: https://github.com/fabolhak/ros2_pibot_motor.git
     source-branch: master
     source-subdir: pibot_motor
+    build-packages: [make, gcc, g++]
     stage-packages: [ros-foxy-ros-core,libblas3,liblapack3]
       
   gpio-lib:
