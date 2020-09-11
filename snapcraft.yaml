@@ -16,7 +16,7 @@ parts:
     source-branch: master
     source-subdir: pibot_motor
     build-packages: [make, gcc, g++]
-    stage-packages: [ros-foxy-ros-core,libblas3,liblapack3]
+    stage-packages: [ros-foxy-ros-core]
       
   gpio-lib:
     plugin: python
@@ -25,13 +25,12 @@ parts:
 apps:
   run:
     command: opt/ros/foxy/bin/ros2 run ros2_pibot_motor service
-    environment: 
-      LD_LIBRARY_PATH: "$LD_LIBRARY_PATH:$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/blas:$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/lapack"
     plugs:
        - network
        - network-bind
        - gpio-memory-control
        - hardware-observe
+    extensions: [ros2-foxy]
 
 architectures:
   - build-on: arm64
