@@ -45,7 +45,7 @@ ros2 service call /triggerMotor std_srvs/Trigger
 
 ## Build
 
-Use snapcraft to build a new image. Make sure to have at least snapcraft [version 4.3](https://github.com/snapcore/snapcraft/releases/tag/4.3) and then run:
+Use snapcraft to build a new image. Make sure to have at least snapcraft [version 4.2](https://github.com/snapcore/snapcraft/releases/tag/4.2) and then run:
 
 ```bash
 cd ros2_pibot_motor
