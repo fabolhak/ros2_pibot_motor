@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2015 fabolhak
+
+SPDX-License-Identifier: CC0-1.0
+-->
+
 # PiBot Motor Driver
 
 This package contains the motor driver for my pibot. It is made for the [CamJam EduKit 3](https://camjam.me/?page_id=1035). To control the motors the [Raspberry Pi Gpio python packge](https://pypi.org/project/RPi.GPIO/) is being used. [ROS2](https://index.ros.org/doc/ros2/) as middleware is being used to communicate with the robot.

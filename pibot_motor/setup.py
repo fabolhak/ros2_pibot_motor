@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2023 fabolhak
+#
+# SPDX-License-Identifier: MIT
+
 from setuptools import setup
 
 package_name = 'ros2_pibot_motor'
